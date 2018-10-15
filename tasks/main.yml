@@ -3,7 +3,14 @@
 - name: manage selinux
   selinux:
     state: "{{ selinux_state }}"
-  notify:
-    - reboot for selinux
+    policy: "{{ selinux_policy | default(omit) }}"
   when:
     - ansible_selinux.status is defined
+    - ansible_virtualization_type != "docker"
+  register: manage_selinux
+
+- name: reboot for selinux
+  include_role:
+    name: robertdebock.reboot
+  when:
+    - manage_selinux.changed

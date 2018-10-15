@@ -1,5 +1,2 @@
 ---
 # handlers file for selinux
-- name: reboot for selinux
-  include_role:
-    name: robertdebock.reboot

@@ -1,3 +1,8 @@
 ---
 # defaults file for selinux
-selinux_state: enabled
+
+# The state, either disabled, permissive or enforcing.
+selinux_state: enforcing
+
+# The policy, default: targeted.
+selinux_policy: targeted

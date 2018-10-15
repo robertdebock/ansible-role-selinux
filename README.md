@@ -33,7 +33,8 @@ Requirements
 Role Variables
 --------------
 
-- selinux_state: What should selinux be set to, either enabled or disabled. [default: enabled]
+- selinux_state: What should selinux be set to, either enforcing, permissive or disabled. [default: enforcing]
+- selinux_policy: The policy to use, only targeted is supported.
 
 Dependencies
 ------------
