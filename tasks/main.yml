@@ -1,0 +1,9 @@
+---
+# tasks file for selinux
+- name: manage selinux
+  selinux:
+    state: "{{ selinux_state }}"
+  notify:
+    - reboot for selinux
+  when:
+    - ansible_selinux.status is defined
