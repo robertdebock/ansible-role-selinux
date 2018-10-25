@@ -14,3 +14,5 @@
     name: robertdebock.reboot
   when:
     - manage_selinux.changed
+  tags:
+    - skip_ansible_lint
