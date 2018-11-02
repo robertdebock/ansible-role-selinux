@@ -1,5 +1,6 @@
 ---
 # defaults file for selinux
+
 # The state, either disabled, permissive or enforcing.
 selinux_state: enforcing
 

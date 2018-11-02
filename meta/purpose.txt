@@ -1,0 +1,3 @@
+The purpose of this role is to install and configure selinux on your system.
+
+It includes an optional reboot when required.
