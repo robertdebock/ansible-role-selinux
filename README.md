@@ -3,10 +3,7 @@ selinux
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-selinux.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-selinux)
 
-The purpose of this role is to install and configure selinux on your system.
-
-It includes an optional reboot when required.
-
+The purpose of this role is to install and configure selinux and it's required libraries on your system.
 
 Example Playbook
 ----------------
