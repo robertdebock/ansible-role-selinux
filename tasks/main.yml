@@ -6,6 +6,7 @@
     policy: "{{ selinux_policy | default(omit) }}"
   when:
     - ansible_selinux.status is defined
+    - ansible_selinux.status != "Missing selinux Python library"
     - ansible_virtualization_type != "docker"
   register: manage_selinux
 
