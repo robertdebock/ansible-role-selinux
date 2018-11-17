@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: selinux-ubuntu-devel
     image: ubuntu:devel
+  - name: selinux-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
