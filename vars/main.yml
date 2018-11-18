@@ -18,9 +18,7 @@ _selinux_requirements:
     - selinux-policy-targeted
   openSUSE Tumbleweed:
     - libselinux1
-    - python-selinux
-    - selinux-policy
-    - selinux-policy-targeted
+    - python3-selinux
   Ubuntu:
     - auditd
     - python-selinux
