@@ -1,0 +1,35 @@
+---
+# vars file for selinux
+_selinux_requirements:
+  default: []
+  CentOS:
+    - libselinux-python
+  Debian:
+    - auditd
+    - python-selinux
+    - selinux-basics
+    - selinux-policy-default
+  Fedora:
+    - libselinux-python
+  openSUSE Leap:
+    - libselinux1
+    - python-selinux
+    - selinux-policy
+    - selinux-policy-targeted
+  openSUSE Tumbleweed:
+    - libselinux1
+    - python-selinux
+    - selinux-policy
+    - selinux-policy-targeted
+  Ubuntu:
+    - auditd
+    - python-selinux
+    - selinux-basics
+    - selinux-policy-default
+
+selinux_requirements: "{{ _selinux_requirements[ansible_distribution] | default(_selinux_requirements['default'] ) }}"
+
+_selinux_policy:
+  default: targeted
+  Debian: default
+  Ubuntu: default

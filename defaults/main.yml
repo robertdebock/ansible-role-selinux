@@ -4,5 +4,9 @@
 # The state, either disabled, permissive or enforcing.
 selinux_state: enforcing
 
-# The policy, default: targeted.
-selinux_policy: targeted
+# The policy, default: see vars/main.yml.
+# The policy differs per distribution, mostly because Debian and Ubuntu use 'default' and other distributions use 'targeted'.
+selinux_policy: "{{ _selinux_policy[ansible_distribution] | default(_selinux_policy['default']) }}"
+
+# To update all packages installed by this roles, set `selinux_package_state` to `latest`.
+selinux_package_state: present
