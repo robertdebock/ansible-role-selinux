@@ -11,7 +11,7 @@
     policy: "{{ selinux_policy }}"
   when:
     - ansible_selinux.status is defined
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or selinux_ignore_docker
   register: manage_selinux
 
 - name: reboot for selinux
