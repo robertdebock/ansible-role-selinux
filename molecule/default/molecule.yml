@@ -43,6 +43,9 @@ platforms:
 provisioner:
   name: ansible
   inventory:
+    host_vars:
+      selinux-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
     group_vars:
       all:
         selinux_ignore_docker: no
