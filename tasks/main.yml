@@ -4,6 +4,9 @@
   package:
     name: "{{ selinux_requirements }}"
     state: "{{ selinux_package_state }}"
+  register: selinux_install_required_packages
+  until: selinux_install_required_packages
+  retries: 3
 
 - name: manage selinux
   selinux:
