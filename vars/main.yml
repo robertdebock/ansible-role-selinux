@@ -4,6 +4,7 @@ _selinux_requirements:
   default: []
   CentOS:
     - libselinux-python
+    - selinux-policy
   Debian:
     - auditd
     - python-selinux
