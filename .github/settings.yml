@@ -1,0 +1,4 @@
+---
+repository:
+  description: Install and configure selinux and it's required libraries on your system.
+  homepage: https://robertdebock.nl/
