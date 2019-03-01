@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: selinux-opensuse-leap
     image: opensuse:leap
-  - name: selinux-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: selinux-ubuntu-latest
     image: ubuntu:latest
   - name: selinux-ubuntu-rolling
