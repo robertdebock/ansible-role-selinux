@@ -3,7 +3,7 @@
 - name: install required packages
   package:
     name: "{{ selinux_requirements }}"
-    state: "{{ selinux_package_state }}"
+    state: present
   register: selinux_install_required_packages
   until: selinux_install_required_packages
   retries: 3
@@ -14,7 +14,7 @@
     policy: "{{ selinux_policy }}"
   when:
     - ansible_selinux.status is defined
-    - ansible_virtualization_type != "docker" or selinux_ignore_docker
+    - ansible_virtualization_type != "docker"
   register: manage_selinux
 
 - name: reboot for selinux
