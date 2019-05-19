@@ -5,7 +5,7 @@
     name: "{{ selinux_requirements }}"
     state: present
   register: selinux_install_required_packages
-  until: selinux_install_required_packages
+  until: selinux_install_required_packages is succeeded
   retries: 3
 
 - name: manage selinux
