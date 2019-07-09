@@ -15,8 +15,6 @@ _selinux_requirements:
   openSUSE Leap:
     - libselinux1
     - python-selinux
-    - selinux-policy
-    - selinux-policy-targeted
   Ubuntu:
     - auditd
     - python-selinux
