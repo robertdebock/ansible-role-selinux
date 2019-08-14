@@ -9,6 +9,7 @@ _selinux_requirements:
   Debian:
     - auditd
     - python-selinux
+    - python-semanage
     - selinux-basics
     - selinux-policy-default
   Fedora:
@@ -20,6 +21,7 @@ _selinux_requirements:
   Ubuntu:
     - auditd
     - python-selinux
+    - python-semanage
     - selinux-basics
     - selinux-policy-default
 
