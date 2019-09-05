@@ -5,6 +5,7 @@ _selinux_requirements:
   CentOS:
     - libselinux-python
     - libsemanage-python
+    - policycoreutils-python
     - selinux-policy
   Debian:
     - auditd
