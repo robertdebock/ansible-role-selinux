@@ -5,7 +5,7 @@ _selinux_requirements:
   Alpine:
     - libselinux-python
   Archlinux:
-    - libselinux-python
+    - libselinux
   CentOS:
     - libselinux-python
     - libsemanage-python
@@ -14,12 +14,15 @@ _selinux_requirements:
   Debian:
     - auditd
     - python-selinux
-    - python-semanage
+    # - python-semanage
+    - libsemanage
     - selinux-basics
     - selinux-policy-default
   Fedora:
-    - libselinux-python
-    - libsemanage-python
+    # - libselinux-python
+    # - libsemanage-python
+    - python3-libselinux
+    - python3-libsemanage
   openSUSE Leap:
     - libselinux1
     - python-selinux
