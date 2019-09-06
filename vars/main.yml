@@ -2,6 +2,10 @@
 # vars file for selinux
 _selinux_requirements:
   default: []
+  Alpine:
+    - libselinux-python
+  Archlinux:
+    - libselinux-python
   CentOS:
     - libselinux-python
     - libsemanage-python
