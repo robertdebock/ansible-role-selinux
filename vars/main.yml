@@ -4,8 +4,10 @@ _selinux_requirements:
   default: []
   Alpine:
     - libselinux
-  Archlinux:
-    - libselinux
+  # These package come from AUR, need to write a role for that.
+  # Archlinux: 
+  #   - libselinux
+  #   - libsemanage
   CentOS:
     - libselinux-python
     - libsemanage-python
