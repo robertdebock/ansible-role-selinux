@@ -5,7 +5,7 @@ _selinux_requirements:
   Alpine:
     - libselinux
   # These package come from AUR, need to write a role for that.
-  # Archlinux: 
+  # Archlinux:
   #   - libselinux
   #   - libsemanage
   CentOS:
