@@ -16,7 +16,7 @@ _selinux_requirements:
   Debian:
     - auditd
     - python-selinux
-    - libsemanage
+    - python-semanage
     - selinux-basics
     - selinux-policy-default
   Fedora:
