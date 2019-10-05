@@ -4,31 +4,26 @@ _selinux_requirements:
   default: []
   Alpine:
     - libselinux
-  CentOS:
+  RedHat-7:
     - libselinux-python
     - libsemanage-python
     - policycoreutils-python
     - selinux-policy
+  RedHat:
+    - python3-dnf
+    - python3-libselinux
+    - python3-libsemanage
   Debian:
     - auditd
     - python-selinux
     - python-semanage
     - selinux-basics
     - selinux-policy-default
-  Fedora:
-    - python3-libselinux
-    - python3-libsemanage
-  openSUSE Leap:
+  Suse:
     - libselinux1
     - python-selinux
-  Ubuntu:
-    - auditd
-    - python-selinux
-    - python-semanage
-    - selinux-basics
-    - selinux-policy-default
 
-selinux_requirements: "{{ _selinux_requirements[ansible_distribution] | default(_selinux_requirements['default'] ) }}"
+selinux_requirements: "{{ _selinux_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_selinux_requirements[ansible_os_family] | default(_selinux_requirements['default'])) }}"
 
 _selinux_policy:
   default: targeted
