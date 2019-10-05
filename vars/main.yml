@@ -4,10 +4,6 @@ _selinux_requirements:
   default: []
   Alpine:
     - libselinux
-  # These package come from AUR, need to write a role for that.
-  # Archlinux:
-  #   - libselinux
-  #   - libsemanage
   CentOS:
     - libselinux-python
     - libsemanage-python
@@ -37,4 +33,3 @@ selinux_requirements: "{{ _selinux_requirements[ansible_distribution] | default(
 _selinux_policy:
   default: targeted
   Debian: default
-  Ubuntu: default
