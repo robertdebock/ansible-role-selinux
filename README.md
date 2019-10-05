@@ -6,6 +6,9 @@ selinux
 
 Install and configure selinux and it's required libraries on your system.
 
+<img src="https://img.shields.io/ansible/role/d/30571"/>
+<img src="https://img.shields.io/ansible/quality/30571"/>
+
 Example Playbook
 ----------------
 
@@ -48,7 +51,7 @@ selinux_state: enforcing
 
 # The policy, default: see vars/main.yml.
 # The policy differs per distribution, mostly because Debian and Ubuntu use 'default' and other distributions use 'targeted'.
-selinux_policy: "{{ _selinux_policy[ansible_distribution] | default(_selinux_policy['default']) }}"
+selinux_policy: "{{ _selinux_policy[ansible_os_family] | default(_selinux_policy['default']) }}"
 ```
 
 Requirements
@@ -64,6 +67,14 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.bootstrap
 - robertdebock.reboot
 
+```
+
+This role uses the following modules:
+```yaml
+---
+- include_role
+- package
+- selinux
 ```
 
 Context
@@ -85,7 +96,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
 |archlinux|no|yes|yes*|
-|centos-6|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
