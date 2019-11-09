@@ -4,11 +4,13 @@ _selinux_requirements:
   default: []
   Alpine:
     - libselinux
-  RedHat-7:
+  RedHat-7: &rhel7
     - libselinux-python
     - libsemanage-python
     - policycoreutils-python
     - selinux-policy
+  Amazon-2: *rhel7
+  Amazon-2018: *rhel7
   RedHat:
     - python3-dnf
     - python3-libselinux
@@ -23,7 +25,7 @@ _selinux_requirements:
     - libselinux1
     - python-selinux
 
-selinux_requirements: "{{ _selinux_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_selinux_requirements[ansible_os_family] | default(_selinux_requirements['default'])) }}"
+selinux_requirements: "{{ _selinux_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default (_selinux_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_selinux_requirements[ansible_os_family] | default(_selinux_requirements['default']))) }}"
 
 _selinux_policy:
   default: targeted
