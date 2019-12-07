@@ -39,7 +39,7 @@ galaxy_info:
     - selinux
     - archlinux
     - centos
-    - rhel
+    - redhat
 
 dependencies:
   - robertdebock.reboot
