@@ -17,8 +17,8 @@ _selinux_requirements:
     - python3-libsemanage
   Debian:
     - auditd
-    - python-selinux
-    - python-semanage
+    - python3-selinux
+    - python3-semanage
     - selinux-basics
     - selinux-policy-default
   Suse:
