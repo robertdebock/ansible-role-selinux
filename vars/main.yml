@@ -19,7 +19,6 @@ _selinux_requirements:
     - auditd
     - python3-selinux
     - python3-semanage
-    - selinux-basics
     - selinux-policy-default
   Suse:
     - libselinux1
