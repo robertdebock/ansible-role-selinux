@@ -2,7 +2,7 @@ selinux
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-selinux"> <img src="https://travis-ci.org/robertdebock/ansible-role-selinux.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/30571"/> <img src="https://img.shields.io/ansible/quality/30571"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-selinux"> <img src="https://travis-ci.org/robertdebock/ansible-role-selinux.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
 
 <a href="https://github.com/robertdebock/ansible-role-selinux/actions"><img src="https://github.com/robertdebock/ansible-role-selinux/workflows/GitHub%20Action/badge.svg"/></a>
 
@@ -68,6 +68,13 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.reboot
 
 ```
+
+Dependencies
+------------
+
+Most roles require some kind of preparation, this is done in `molecule/default/prepare.yml`. This role has a "hard" dependency on the following roles:
+
+- robertdebock.reboot
 
 Context
 -------
