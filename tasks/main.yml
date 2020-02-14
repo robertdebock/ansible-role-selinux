@@ -15,6 +15,7 @@
   when:
     - ansible_selinux.status is defined
     - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "container"
   register: manage_selinux
 
 - name: reboot for selinux
