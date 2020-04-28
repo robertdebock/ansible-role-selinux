@@ -94,7 +94,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|amazon|all|
 |debian|buster|
 |el|7, 8|
 |fedora|all|
@@ -114,6 +113,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | Archlinux & Ansible 2.7 | New-style module did not handle its own exit |
+| amazonlinux | Dependency (reboot) does not work on amazonlinux. |
 
 
 ## Testing
