@@ -1,4 +1,3 @@
----
 galaxy_info:
   author: Robert de Bock
   role_name: selinux
@@ -8,27 +7,34 @@ galaxy_info:
   min_ansible_version: 2.8
 
   platforms:
-    - name: Debian
+    - name: Alpine
       versions:
-        - buster
+        - all
+    - name: Amazon
+      versions:
+        - 2018.03
     - name: EL
       versions:
         - 7
         - 8
+    - name: Debian
+      versions:
+        - buster
     - name: Fedora
       versions:
-        - all
+        - 31
+        - 32
     - name: OpenSUSE
       versions:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - focal
+        - bionic
 
   galaxy_tags:
     - selinux
     - centos
     - redhat
 
-dependencies:
-  - robertdebock.reboot
+dependencies:   - robertdebock.reboot
