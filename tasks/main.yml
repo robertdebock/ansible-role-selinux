@@ -16,12 +16,12 @@
     - ansible_selinux.status is defined
     - ansible_virtualization_type != "docker"
     - ansible_virtualization_type != "container"
-  register: manage_selinux
+  register: selinux_manage_selinux
 
 - name: reboot for selinux
   include_role:
     name: robertdebock.reboot
   when:
-    - manage_selinux.changed
+    - selinux_manage_selinux.changed
   tags:
     - skip_ansible_lint
