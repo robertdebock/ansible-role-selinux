@@ -21,7 +21,7 @@
 - name: restore selinux contexts
   shell: |
     restorecon="$( find /sbin /usr/sbin -iname restorecon )"
-    $restorecon -R /usr /etc /var
+    $restorecon -R /usr /etc /var /dev /sys
   when:
     - selinux_manage_selinux.changed
 
