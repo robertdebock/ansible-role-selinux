@@ -18,6 +18,13 @@
     - ansible_virtualization_type != "container"
   register: selinux_manage_selinux
 
+- name: restore selinux contexts
+  shell: |
+    restorecon="$( find /sbin /usr/sbin -iname restorecon )"
+    $restorecon -R /usr /etc /var
+  when:
+    - selinux_manage_selinux.changed
+
 - name: reboot for selinux
   include_role:
     name: robertdebock.reboot

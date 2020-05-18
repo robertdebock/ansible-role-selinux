@@ -21,6 +21,7 @@ _selinux_requirements:
     - python3-selinux
     - python3-semanage
     - selinux-policy-default
+    - policycoreutils
   Suse:
     - libselinux1
     - python-selinux
