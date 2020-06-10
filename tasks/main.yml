@@ -14,8 +14,7 @@
     policy: "{{ selinux_policy }}"
   when:
     - ansible_selinux.status is defined
-    - ansible_virtualization_type != "docker"
-    - ansible_virtualization_type != "container"
+    - ansible_connection != "docker"
   register: selinux_manage_selinux
 
 - name: reboot for selinux
