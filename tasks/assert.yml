@@ -1,0 +1,15 @@
+---
+- name: test if selinux_state is set correctly
+  assert:
+    that:
+      - selinux_state is defined
+      - selinux_state | length >= 0
+      - selinux_state in ["disabled", "enforcing", "permissive"]
+
+- name: test if selinux_policy is set correctly
+  assert:
+    that:
+      - selinux_policy is defined
+      - selinux_policy | length >= 0
+      - selinux_policy in ["default", "minimum", "mls", "targeted"]
+
