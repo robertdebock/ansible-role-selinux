@@ -12,4 +12,3 @@
       - selinux_policy is defined
       - selinux_policy | length >= 0
       - selinux_policy in ["default", "minimum", "mls", "targeted"]
-
