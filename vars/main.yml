@@ -1,5 +1,6 @@
 ---
 # vars file for selinux
+
 _selinux_requirements:
   default: []
   Alpine:
