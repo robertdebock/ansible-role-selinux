@@ -12,3 +12,9 @@
       - selinux_policy is defined
       - selinux_policy | length >= 0
       - selinux_policy in ["default", "minimum", "mls", "targeted"]
+
+- name: test if selinux_reboot is set correctly
+  assert:
+    that:
+      - selinux_reboot is defined
+      - selinux_reboot | type_debug == "bool"

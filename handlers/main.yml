@@ -2,3 +2,5 @@
 # handlers file for selinux
 - name: reboot
   reboot:
+  when:
+    - selinux_reboot | bool
