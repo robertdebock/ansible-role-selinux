@@ -15,15 +15,9 @@
   selinux:
     state: "{{ selinux_state }}"
     policy: "{{ selinux_policy }}"
+  notify:
+    - reboot
   when:
     - ansible_selinux.status is defined
     - ansible_connection != "docker"
   register: selinux_manage_selinux
-
-- name: reboot for selinux
-  include_role:
-    name: robertdebock.reboot
-  when:
-    - selinux_manage_selinux.changed
-  tags:
-    - skip_ansible_lint
