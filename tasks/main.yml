@@ -20,4 +20,3 @@
   when:
     - ansible_selinux.status is defined
     - ansible_connection != "docker"
-  register: selinux_manage_selinux
