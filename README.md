@@ -94,7 +94,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |alpine|all|
 |amazon|2018.03|
 |el|7, 8|
-|debian|buster|
+|debian|buster, bullseye|
 |fedora|31, 32|
 |opensuse|all|
 |ubuntu|focal, bionic|
