@@ -30,7 +30,7 @@ _selinux_requirements:
     - policycoreutils
   Suse:
     - libselinux1
-    - python-selinux
+    - python3-selinux
 
 selinux_requirements: "{{ _selinux_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default (_selinux_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_selinux_requirements[ansible_os_family] | default(_selinux_requirements['default']))) }}"
 
