@@ -10,7 +10,7 @@
     state: present
 
 - name: manage selinux
-  selinux:
+  posix.selinux:
     state: "{{ selinux_state }}"
     policy: "{{ selinux_policy }}"
   notify:
