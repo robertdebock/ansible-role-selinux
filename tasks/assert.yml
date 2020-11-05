@@ -21,3 +21,47 @@
       - selinux_reboot is defined
       - selinux_reboot | type_debug == "bool"
     quiet: yes
+
+- name: test if selinux_booleans is set correctly
+  assert:
+    that:
+      - selinux_booleans | length > 0
+      - selinux_booleans is iterable
+    quiet: yes
+  when:
+    - selinux_booleans is defined
+
+- name: test if item.name in selinux_booleans is set correctly
+  assert:
+    that:
+      - item.name is defined
+    quiet: yes
+  loop: "{{ selinux_booleans }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - selinux_booleans is defined
+
+- name: test if item.state in selinux_booleans is set correctly
+  assert:
+    that:
+      - item.state | type_debug == "bool"
+    quiet: yes
+  loop: "{{ selinux_booleans }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - selinux_booleans is defined
+    - item.state is defined
+
+- name: test if item.state in selinux_booleans is set correctly
+  assert:
+    that:
+      - item.persistent | type_debug == "bool"
+    quiet: yes
+  loop: "{{ selinux_booleans }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - selinux_booleans is defined
+    - item.persistent is defined

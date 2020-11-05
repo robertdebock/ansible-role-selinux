@@ -18,3 +18,16 @@
   when:
     - ansible_selinux.status is defined
     - ansible_connection != "docker"
+
+- name: manage selinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('yes') }}"
+    persistent: "{{ item.persistent }}"
+  loop: "{{ selinux_booleans }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - ansible_selinux.status is defined
+    - ansible_connection != "docker"
+    - selinux_booleans is defined
