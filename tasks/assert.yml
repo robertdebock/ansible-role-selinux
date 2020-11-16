@@ -19,7 +19,7 @@
   assert:
     that:
       - selinux_reboot is defined
-      - selinux_reboot | type_debug == "bool"
+      - selinux_reboot is boolean
     quiet: yes
 
 - name: test if selinux_booleans is set correctly
@@ -45,7 +45,7 @@
 - name: test if item.state in selinux_booleans is set correctly
   assert:
     that:
-      - item.state | type_debug == "bool"
+      - item.state is boolean
     quiet: yes
   loop: "{{ selinux_booleans }}"
   loop_control:
@@ -57,7 +57,7 @@
 - name: test if item.state in selinux_booleans is set correctly
   assert:
     that:
-      - item.persistent | type_debug == "bool"
+      - item.persistent is boolean
     quiet: yes
   loop: "{{ selinux_booleans }}"
   loop_control:
