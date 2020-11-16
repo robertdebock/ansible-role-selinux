@@ -3,7 +3,6 @@
   assert:
     that:
       - selinux_state is defined
-      - selinux_state | length >= 0
       - selinux_state in [ "disabled", "enforcing", "permissive" ]
     quiet: yes
 
@@ -11,7 +10,6 @@
   assert:
     that:
       - selinux_policy is defined
-      - selinux_policy | length >= 0
       - selinux_policy in [ "default", "minimum", "mls", "targeted" ]
     quiet: yes
 
@@ -25,7 +23,6 @@
 - name: test if selinux_booleans is set correctly
   assert:
     that:
-      - selinux_booleans | length > 0
       - selinux_booleans is iterable
     quiet: yes
   when:
