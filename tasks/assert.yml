@@ -4,6 +4,7 @@
   assert:
     that:
       - selinux_state is defined
+      - selinux_state is string
       - selinux_state in [ "disabled", "enforcing", "permissive" ]
     quiet: yes
 
@@ -11,6 +12,7 @@
   assert:
     that:
       - selinux_policy is defined
+      - selinux_policy is string
       - selinux_policy in [ "default", "minimum", "mls", "targeted" ]
     quiet: yes
 
@@ -33,6 +35,7 @@
   assert:
     that:
       - item.name is defined
+      - item.name is string
     quiet: yes
   loop: "{{ selinux_booleans }}"
   loop_control:
