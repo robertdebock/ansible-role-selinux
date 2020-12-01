@@ -20,7 +20,7 @@
   assert:
     that:
       - selinux_reboot is defined
-      - selinux_reboot is boolean
+      - selinux_reboot | bool in [true, false]
     quiet: yes
 
 - name: test if selinux_booleans is set correctly
