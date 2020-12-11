@@ -2,9 +2,9 @@
 
 Install and configure selinux and its required libraries on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-selinux.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-selinux)|[![github](https://github.com/robertdebock/ansible-role-selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-selinux/actions)|[![quality](https://img.shields.io/ansible/quality/30571)](https://galaxy.ansible.com/robertdebock/selinux)|[![downloads](https://img.shields.io/ansible/role/d/30571)](https://galaxy.ansible.com/robertdebock/selinux)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-selinux.svg)](https://github.com/robertdebock/ansible-role-selinux/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-selinux.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-selinux)|[![github](https://github.com/robertdebock/ansible-role-selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-selinux/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-selinux/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-selinux)|[![quality](https://img.shields.io/ansible/quality/30571)](https://galaxy.ansible.com/robertdebock/selinux)|[![downloads](https://img.shields.io/ansible/role/d/30571)](https://galaxy.ansible.com/robertdebock/selinux)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-selinux.svg)](https://github.com/robertdebock/ansible-role-selinux/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -66,10 +66,11 @@ selinux_reboot: yes
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-selinux/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|
