@@ -16,8 +16,6 @@ molecule:
   retry: 2
   parallel:
     matrix:
-      - image: "alpine"
-        tag: "latest"
       - image: "amazonlinux"
         tag: "latest"
       - image: "centos"
@@ -32,6 +30,8 @@ molecule:
         tag: "32"
       - image: "fedora"
         tag: "latest"
+      - image: "fedora"
+        tag: "rawhide"
       - image: "opensuse"
         tag: "latest"
       - image: "ubuntu"
