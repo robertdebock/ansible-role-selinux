@@ -14,14 +14,14 @@
 - name: configure selinux
   block:
     - name: manage selinux
-      selinux:
+      ansible.posix.selinux:
         state: "{{ selinux_state }}"
         policy: "{{ selinux_policy }}"
       notify:
         - reboot
 
     - name: manage selinux booleans
-      seboolean:
+      ansible.posix.seboolean:
         name: "{{ item.name }}"
         state: "{{ item.state | default('yes') }}"
         persistent: "{{ item.persistent }}"
