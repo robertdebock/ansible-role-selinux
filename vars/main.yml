@@ -5,6 +5,11 @@ _selinux_requirements:
   default: []
   Alpine:
     - libselinux
+  Amazon-2: &rhel_7_requirements
+    - libselinux-python
+    - libsemanage-python
+    - policycoreutils-python
+    - selinux-policy
   Debian-testing:
     - auditd
     - python3-selinux
@@ -16,11 +21,7 @@ _selinux_requirements:
     - python3-semanage
     - selinux-policy-default
     - policycoreutils
-  RedHat-7:
-    - libselinux-python
-    - libsemanage-python
-    - policycoreutils-python
-    - selinux-policy
+  RedHat-7: *rhel_7_requirements
   RedHat: &redhat_requirements
     - python3-dnf
     - python3-libselinux
