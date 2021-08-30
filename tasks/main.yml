@@ -10,9 +10,11 @@
   ansible.builtin.package:
     name: "{{ selinux_requirements }}"
     state: present
+  notify:
+    - gather facts
 
-- name: gather facts
-  setup:
+- name: flush handlers
+  meta: flush_handlers
 
 - name: debug
   debug:
