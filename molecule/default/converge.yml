@@ -6,6 +6,7 @@
 
   roles:
     - role: ansible-role-selinux
+      selinux_reboot: no
       selinux_booleans:
         - name: http_can_network_connect
         - name: abrt_anon_write
