@@ -37,4 +37,4 @@
         - selinux_booleans is defined
   when:
     - ansible_selinux.status is defined
-    - ansible_connection not in [ "docker", "community.docker.docker" ]
+    - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
