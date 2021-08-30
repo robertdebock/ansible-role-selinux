@@ -16,12 +16,6 @@
 - name: flush handlers
   meta: flush_handlers
 
-- name: debug
-  debug:
-    msg:
-      - "1: {{ ansible_selinux.status }}"
-      - "2: {{ ansible_connection }}"
-
 - name: configure selinux
   block:
     - name: manage selinux
@@ -43,4 +37,4 @@
         - selinux_booleans is defined
   when:
     - ansible_selinux.status is defined
-    - ansible_connection != "docker"
+    - ansible_connection not in [ "docker", "community.docker.docker" ]
