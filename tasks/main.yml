@@ -11,6 +11,9 @@
     name: "{{ selinux_requirements }}"
     state: present
 
+- name: gather facts
+  setup:
+
 - name: debug
   debug:
     msg:
