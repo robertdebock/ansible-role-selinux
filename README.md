@@ -1,4 +1,4 @@
-# Ansible role [selinux](#selinux)
+# [Ansible role selinux](#selinux)
 
 Install and configure selinux and its required libraries on your system.
 
