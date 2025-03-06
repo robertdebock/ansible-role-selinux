@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: robertdebock.selinux
+    - role: ansible-role-selinux
       selinux_reboot: false
       selinux_booleans:
         - name: http_can_network_connect
