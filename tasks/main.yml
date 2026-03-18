@@ -19,7 +19,7 @@
 
 - name: Configure selinux
   when:
-    - ansible_selinux.status is defined
+    - ansible_facts['selinux'].status is defined
     - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
   block:
     - name: Manage selinux
